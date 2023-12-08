@@ -7,8 +7,12 @@
       </button>
       <p>Count: {{ count }}</p>
 
+      <p>URL api: {{ url }}</p>
       <input type="text" [(ngModel)]="myContent" />
       <h2>{{ myContent }}</h2>
+      @for (todo of todos; track todo.id) {
+      <li>{{ todo.title }}</li>
+      }
     </div>
   </div>
 </div>
