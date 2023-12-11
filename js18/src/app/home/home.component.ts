@@ -14,19 +14,21 @@ export class HomeComponent { //always put everything in the class, not outside o
   myContent:string = '';
   url:string = 'http://localhost:3000/todo';
   todos:any[] = []; //it's available now
+  owner:string = '';
 
   increaseCount() {
     this.count++; //gebruik van 'this' verplicht want we zitten in een class!
+    localStorage.setItem('count', this.count.toString());
   }
 
 
   postData() {
     const options = {
       method: 'POST',
-      headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnie/8.3.0'},
+      headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.3.0'},
       body: JSON.stringify({
         'title': this.myContent,
-        'owner': 'V',
+        'owner': this.owner,
         'done': false
       })
     };
@@ -41,6 +43,7 @@ export class HomeComponent { //always put everything in the class, not outside o
       .catch(err => console.error(err));
   }
 
+  /* userNames = JSON.stringify(this.users); */
   
 /* fetchMyData() {
   fetch(this.url)
@@ -52,9 +55,10 @@ Underneath is the next step after adding url:string ... above under class*/
 
   fetchMyData() {
   fetch(this.url)
-  .then(response => response.json())
-  .then(json => this.todos = json)
+    .then(response => response.json())
+    .then(json => this.todos = json)
 }
+
 
   //al de gegevens in db.json invoegen! Moet erbij de volgende ngOnInit!
   ngOnInit() { 

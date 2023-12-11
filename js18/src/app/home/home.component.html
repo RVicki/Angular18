@@ -9,7 +9,13 @@
 
       <p>URL api: {{ url }}</p>
       <input type="text" [(ngModel)]="myContent" />
-      <option value=""></option>
+
+      <select class="form-control" [(ngModel)]="owner">
+        <option value="1">A</option>
+        <option value="2">B</option>
+        <option value="3">C</option>
+      </select>
+
       <h2>{{ myContent }}</h2>
       <button (click)="postData()" class="btn btn-primary">Post</button>
 
