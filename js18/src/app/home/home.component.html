@@ -9,10 +9,18 @@
 
       <p>URL api: {{ url }}</p>
       <input type="text" [(ngModel)]="myContent" />
+      <option value=""></option>
       <h2>{{ myContent }}</h2>
-      @for (todo of todos; track todo.id) {
-      <li>{{ todo.title }}</li>
-      }
+      <button (click)="postData()" class="btn btn-primary">Post</button>
+
+      <h3>MyShoppingList</h3>
+      @for (todo of todos; track todo.id) { @if (todo.done) {
+      <li style="text-decoration: line-through">
+        {{ todo.title }} - {{ todo.owner }}
+      </li>
+      }@else {
+      <li>{{ todo.title }} - {{ todo.owner }}</li>
+      } }
     </div>
   </div>
 </div>
