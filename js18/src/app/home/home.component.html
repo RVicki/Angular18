@@ -1,19 +1,27 @@
+<head>
+  <link rel="stylesheet" href="../home/home.component.css" />
+</head>
+
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1>{{ title }}</h1>
-      <button (click)="increaseCount()" class="btn btn-primary">
+      <h1>
+        {{ title }}
+      </h1>
+      <button (click)="increaseCount()" class="btn btn-primary m-1">
         Increase
+      </button>
+      <button (click)="DecreaseCount()" class="btn btn-danger m-1">
+        Decrease
       </button>
       <p>Count: {{ count }}</p>
 
       <p>URL api: {{ url }}</p>
-      <input type="text" [(ngModel)]="myContent" />
-
-      <select class="form-control" [(ngModel)]="owner">
-        <option value="1">A</option>
-        <option value="2">B</option>
-        <option value="3">C</option>
+      <input class="form-control mb-1" type="text" [(ngModel)]="myContent" />
+      <select class="form-control" [(ngModel)]="user">
+        @for (user of users; track user.id) {
+        <option [value]="user.name">{{ user.name }}</option>
+        }
       </select>
 
       <h2>{{ myContent }}</h2>

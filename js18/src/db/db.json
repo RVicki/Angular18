@@ -23,30 +23,6 @@
       "title": "Drone",
       "owner": "M",
       "done": true
-    },
-    {
-      "title": "why hello",
-      "owner": "V",
-      "done": false,
-      "id": 5
-    },
-    {
-      "title": "new item",
-      "owner": "A",
-      "done": false,
-      "id": 6
-    },
-    {
-      "title": "dsqd",
-      "owner": "V",
-      "done": false,
-      "id": 7
-    },
-    {
-      "title": "hahaha",
-      "owner": "1",
-      "done": false,
-      "id": 8
     }
   ],
   "users": [
@@ -59,8 +35,20 @@
       "name": "X"
     },
     {
-      "id": 1,
+      "id": 3,
       "name": "D"
+    },
+    {
+      "id": 4,
+      "name": "F"
+    },
+    {
+      "id": 5,
+      "name": "P"
+    },
+    {
+      "id": 6,
+      "name": "A"
     }
   ]
 }
