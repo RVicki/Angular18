@@ -10,10 +10,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent { //always put everything in the class, not outside of it
-  xmasbudget = 500
+  xmasbudget = 600;
   count:number = 0;
   title = 'Xmas Shopping';
   myContent:string = '';
+  priceItem:number = 0;
   url:string = 'http://localhost:3000/todo';
   urlUsers:string = 'http://localhost:3000/users';
   todos:any[] = []; //it's available now
@@ -36,7 +37,8 @@ export class HomeComponent { //always put everything in the class, not outside o
       body: JSON.stringify({
         'title': this.myContent,
         'owner': this.user,
-        'done': false
+        'done': false,
+        'price': this.priceItem,
       })
     };
 
@@ -46,13 +48,22 @@ export class HomeComponent { //always put everything in the class, not outside o
         console.log(response);
         this.fetchMyData();
         this.myContent = '';
+        this.user = '';
+        this.priceItem = 0;
       })
       .catch(err => console.error(err));
   }
 
   toggleDone(todo: any) {
+    const originalStatus = todo.done;
+
     todo.done = !todo.done;
     this.updateTodoStatus(todo);
+
+    const priceDifference = originalStatus ? todo.price : -todo.price;
+    this.xmasbudget += priceDifference;
+
+    localStorage.setItem('xmasbudget', JSON.stringify(this.xmasbudget));
   }
 
   updateTodoStatus(todo: any) {
@@ -112,6 +123,8 @@ deleteTodo(id: number) {
     this.fetchMyData();
     this.fetchMyUsers();
 
-    
+    const storedCount = localStorage.getItem('count');
+   this.count = storedCount !== null ? parseInt(storedCount) : 0;
+
   }
 }
