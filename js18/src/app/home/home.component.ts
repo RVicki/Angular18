@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent { //always put everything in the class, not outside of it
+  xmasbudget = 500
   count:number = 0;
   title = 'Xmas Shopping';
   myContent:string = '';
@@ -18,7 +19,6 @@ export class HomeComponent { //always put everything in the class, not outside o
   todos:any[] = []; //it's available now
   users:any[] = [];
   user: any;
-
   increaseCount() {
     this.count++; //gebruik van 'this' verplicht want we zitten in een class!
     localStorage.setItem('count', this.count.toString());
@@ -50,6 +50,25 @@ export class HomeComponent { //always put everything in the class, not outside o
       .catch(err => console.error(err));
   }
 
+  toggleDone(todo: any) {
+    todo.done = !todo.done;
+    this.updateTodoStatus(todo);
+  }
+
+  updateTodoStatus(todo: any) {
+    const options = {
+      method: 'PATCH',
+      headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.4.5'}, 
+      body: JSON.stringify(todo)
+    };
+    
+    fetch('http://localhost:3000/todo/'+todo.id, options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
+  }
+  
+
   /* userNames = JSON.stringify(this.users); */
   
 /* fetchMyData() {
@@ -72,10 +91,27 @@ fetchMyUsers() {
       .then(json => this.users = json)
 }
 
+deleteTodo(id: number) {
+  console.log (id)
+  const options = {
+    method: 'DELETE',
+    headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.3.0'}
+  };
+  
+  fetch('http://localhost:3000/presents/'+id, options)
+    .then(response => response.json())
+    .then(response => {
+      this.fetchMyData();
+    })
+    .catch(err => console.error(err));
+}
+
   //al de gegevens in db.json invoegen! Moet erbij de volgende ngOnInit!
   ngOnInit() { 
 
     this.fetchMyData();
     this.fetchMyUsers();
+
+    
   }
 }

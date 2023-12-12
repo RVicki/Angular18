@@ -8,6 +8,7 @@
       <h1>
         {{ title }}
       </h1>
+      <h2>X-MAS budget: {{ xmasbudget | currency : "EUR" }}</h2>
       <button (click)="increaseCount()" class="btn btn-primary m-1">
         Increase
       </button>
@@ -30,14 +31,26 @@
       <h3>MyShoppingList</h3>
       @for (todo of todos; track todo.id) { @if (todo.done) {
 
-      <li style="text-decoration: line-through">
-        {{ todo.title }} - {{ todo.owner }}
-        <button class="btn btn-danger m-1">Undo</button>
+      <li class="todo-item" style="text-decoration: line-through">
+        <button (click)="toggleDone(todo)" class="btn btn-dark m-1">
+          Undo
+        </button>
+        <button class="btn btn-danger m-1" (click)="deleteTodo(todo.id)">
+          X
+        </button>
+        {{ todo.title }} - {{ todo.owner }} -
+        {{ todo.price | currency : "EUR" }}
       </li>
       }@else {
-      <li>
-        {{ todo.title }} - {{ todo.owner }}
-        <button class="btn btn-success m-1">Done</button>
+      <li class="todo-item">
+        <button (click)="toggleDone(todo)" class="btn btn-success m-1">
+          Done
+        </button>
+        <button class="btn btn-danger m-1" (click)="deleteTodo(todo.id)">
+          X
+        </button>
+        {{ todo.title }} - {{ todo.owner }} -
+        {{ todo.price | currency : "EUR" }}
       </li>
       } }
     </div>
