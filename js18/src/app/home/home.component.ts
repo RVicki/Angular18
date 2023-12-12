@@ -109,7 +109,7 @@ deleteTodo(id: number) {
     headers: {'Content-Type': 'application/json', 'User-Agent': 'insomnia/8.3.0'}
   };
   
-  fetch('http://localhost:3000/presents/'+id, options)
+  fetch('http://localhost:3000/todo/'+id, options)
     .then(response => response.json())
     .then(response => {
       this.fetchMyData();
