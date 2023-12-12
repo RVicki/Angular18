@@ -74,11 +74,8 @@ fetchMyUsers() {
 
   //al de gegevens in db.json invoegen! Moet erbij de volgende ngOnInit!
   ngOnInit() { 
-    /* console.log('yay, my init works!')  --> test*/
 
     this.fetchMyData();
     this.fetchMyUsers();
   }
-
-  
 }
