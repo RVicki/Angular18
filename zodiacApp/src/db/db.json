@@ -1,0 +1,149 @@
+{
+    "chineseHoroscopes": [
+      {
+        "animal": "Rat",
+        "years": ["2020", "2008", "1996", "1984", "1972", "1960"],
+        "image": "Rat.png",
+        "symbol": "鼠",
+        "properties": {
+          "element": "Water",
+          "luckyColor": "Blue",
+          "luckyNumbers": [2, 3],
+          "traits": ["Quick-witted", "Charming", "Resourceful"]
+        },
+        "quote": "The only way to do great work is to love what you do."
+      },
+      {
+        "animal": "Ox",
+        "years": ["2021","2009", "1997", "1985", "1973", "1961"],
+        "symbol": "牛",
+        "properties": {
+          "element": "Earth",
+          "luckyColor": "Green",
+          "luckyNumbers": [1, 9],
+          "traits": ["Diligent", "Dependable", "Persistent"]
+        },
+        "quote": "Patience is not the ability to wait, but the ability to keep a good attitude while waiting."
+      },
+      {
+        "animal": "Tiger",
+        "years": ["2022","2010", "1998", "1986", "1974", "1962"],
+        "symbol": "虎",
+        "properties": {
+          "element": "Wood",
+          "luckyColor": "Orange",
+          "luckyNumbers": [1, 3, 4],
+          "traits": ["Brave", "Competitive", "Confident"]
+        },
+        "quote": "Believe you can and you're halfway there."
+      },
+      {
+        "animal": "Rabbit",
+        "years": ["2023","2011", "1999", "1987", "1975", "1963"],
+        "symbol": "兔",
+        "properties": {
+          "element": "Wood",
+          "luckyColor": "Pink",
+          "luckyNumbers": [3, 4, 6],
+          "traits": ["Gentle", "Elegant", "Kind-hearted"]
+        },
+        "quote": "The future belongs to those who believe in the beauty of their dreams."
+      },
+      {
+        "animal": "Dragon",
+        "years": ["2012", "2000", "1988", "1976", "1964"],
+        "symbol": "龙",
+        "properties": {
+          "element": "Earth",
+          "luckyColor": "Gold",
+          "luckyNumbers": [1, 6, 7],
+          "traits": ["Innovative", "Ambitious", "Passionate"]
+        },
+        "quote": "Do not wait to strike till the iron is hot, but make it hot by striking."
+      },
+      {
+        "animal": "Snake",
+        "years": ["2013", "2001", "1989", "1977", "1965"],
+        "symbol": "蛇",
+        "properties": {
+          "element": "Fire",
+          "luckyColor": "Black",
+          "luckyNumbers": [2, 8, 9],
+          "traits": ["Intelligent", "Charming", "Determined"]
+        },
+        "quote": "The only limit to our realization of tomorrow will be our doubts of today."
+      },
+      {
+        "animal": "Horse",
+        "years": ["2014", "2002", "1990", "1978", "1966"],
+        "symbol": "马",
+        "properties": {
+          "element": "Fire",
+          "luckyColor": "Yellow",
+          "luckyNumbers": [2, 3, 7],
+          "traits": ["Adaptable", "Courageous", "Independent"]
+        },
+        "quote": "Success is not final, failure is not fatal: It is the courage to continue that counts."
+      },
+      {
+        "animal": "Goat",
+        "years": ["2015", "2003", "1991", "1979", "1967"],
+        "symbol": "羊",
+        "properties": {
+          "element": "Earth",
+          "luckyColor": "Brown",
+          "luckyNumbers": [3, 4, 9],
+          "traits": ["Calm", "Gentle", "Sympathetic"]
+        },
+        "quote": "The only way to do great work is to love what you do."
+      },
+      {
+        "animal": "Monkey",
+        "years": ["2016", "2004", "1992", "1980", "1968"],
+        "symbol": "猴",
+        "properties": {
+          "element": "Metal",
+          "luckyColor": "White",
+          "luckyNumbers": [1, 7, 8],
+          "traits": ["Inventive", "Witty", "Intelligent"]
+        },
+        "quote": "Believe you can and you're halfway there."
+      },
+      {
+        "animal": "Rooster",
+        "years": ["2017", "2005", "1993", "1981", "1969"],
+        "symbol": "鸡",
+        "properties": {
+          "element": "Metal",
+          "luckyColor": "Gold",
+          "luckyNumbers": [5, 7, 8],
+          "traits": ["Honest", "Energetic", "Intelligent"]
+        },
+        "quote": "The future belongs to those who believe in the beauty of their dreams."
+      },
+      {
+        "animal": "Dog",
+        "years": ["2018", "2006", "1994", "1982", "1970"],
+        "symbol": "狗",
+        "properties": {
+          "element": "Earth",
+          "luckyColor": "Red",
+          "luckyNumbers": [3, 4, 9],
+          "traits": ["Loyal", "Honest", "Courageous"]
+        },
+        "quote": "Do not wait to strike till the iron is hot, but make it hot by striking."
+      },
+      {
+        "animal": "Pig",
+        "years": ["2019", "2007", "1995", "1983", "1971"],
+        "symbol": "猪",
+        "properties": {
+          "element": "Water",
+          "luckyColor": "Gray",
+          "luckyNumbers": [2, 5, 8],
+          "traits": ["Optimistic", "Gentle", "Sympathetic"]
+        },
+        "quote": "Success is not final, failure is not fatal: It is the courage to continue that counts."
+      }
+    ]
+  }

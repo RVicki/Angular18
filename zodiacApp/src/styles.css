@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url("https://w.forfun.com/fetch/a6/a6e2c4a9b8b1bed3e788e95462f37421.jpeg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: white;
+}
+label {
+    margin: 10px;
+}

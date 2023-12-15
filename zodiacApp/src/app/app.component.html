@@ -11,20 +11,32 @@
       <div class="row">
         <div class="col-md">
           <label for="Name">Name: </label>
-          <input type="text" />
+          <input type="text" [(ngModel)]="inputName" id="nameInput" />
         </div>
         <div class="col-md">
           <label for="dateBirth">Date of Birth: </label>
-          <input type="date" name="date" id="date" />
+          <input type="date" [(ngModel)]="inputDate" id="dateInput" />
         </div>
         <div class="col-md">
           <label for="city">City: </label>
-          <input type="text" />
+          <input type="text" id="cityInput" />
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <button type="button" class="btn btn-success m-2 btn-lg">GO!</button>
+          <button
+            type="button"
+            class="btn btn-success m-2 btn-lg"
+            (click)="displayData()"
+          >
+            GO!
+          </button>
+        </div>
+      </div>
+      <div *ngIf="displayedData" class="row">
+        <div class="col-md">
+          <p>Name: {{ inputName }}</p>
+          <p>Date: {{ inputDate }}</p>
         </div>
       </div>
     </div>
