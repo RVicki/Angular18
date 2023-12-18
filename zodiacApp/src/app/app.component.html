@@ -33,11 +33,18 @@
           </button>
         </div>
       </div>
-      <div *ngIf="displayedData" class="row">
+      <div class="row">
+        @if (displayedData) {
         <div class="col-md">
           <p>Name: {{ inputName }}</p>
           <p>Date: {{ inputDate }}</p>
+          @if (foundZodiac !== '') {
+          <p>
+            Zodiac: <b>{{ foundZodiac }}</b>
+          </p>
+          }
         </div>
+        }
       </div>
     </div>
   </body>
