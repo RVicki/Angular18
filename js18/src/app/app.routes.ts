@@ -3,6 +3,12 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
+//import auth guard and login component
+import { LoginComponent } from './login/login.component';
+import { authGuard } from './auth.guard';
+
+//Also create a login route and secure with [authGuard]!
+
 export const routes: Routes = [
   {
     path: '',
@@ -19,6 +25,11 @@ export const routes: Routes = [
   },
   {
     path: 'contact',
+    canActivate: [authGuard],
     component: ContactComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
 ];
