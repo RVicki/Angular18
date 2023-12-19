@@ -3,19 +3,23 @@
     <div class="col-md-12">
       <h1>Login</h1>
       <input
-        class="form-control"
+        class="form-control m-2"
         type="text"
         [(ngModel)]="username"
         placeholder="Username"
       />
       <input
-        class="form-control"
+        class="form-control m-2"
         type="password"
         [(ngModel)]="password"
         placeholder="Password"
       />
-      <button (click)="onSubmit()" type="submit">Login</button>
-      <button (click)="logout()" type="submit">Logout</button>
+      <button class="btn btn-success m-2" (click)="onSubmit()" type="submit">
+        Login
+      </button>
+      <button class="btn btn-warning m-2" (click)="logout()" type="submit">
+        Logout
+      </button>
     </div>
   </div>
 </div>
