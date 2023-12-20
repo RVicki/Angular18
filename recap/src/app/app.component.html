@@ -15,6 +15,9 @@
 
     <button (click)="(methodName)">Click me</button>
 
-    <app-register></app-register>
+    <router-outlet></router-outlet>
+
+    <h2>Data from the app component</h2>
+    {{ users | json }}
   </div>
 </div>
