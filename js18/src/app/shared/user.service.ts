@@ -5,6 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
+ async register(username: any, password:any) {
+    const user = {
+      username: username,
+      password: password
+    };
+
+    //HERE COMES SOME CODE!!
+  }
+
   constructor() { }
   // Dummy users wich we can replace with actual api called users
 	users = [

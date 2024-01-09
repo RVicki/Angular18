@@ -46,6 +46,8 @@
         </div>
         }
       </div>
+      <input type="file" (change)="onFileSelected($event)" />
+      <img [src]="imagePath" />
     </div>
   </body>
 </html>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ export class AppComponent {
   animalType:string = '';
   url:string = 'http://localhost:3000/zodiac'
   zodiacs:any[] = [];
+  imagePath: any;
 
   displayData() {
     this.displayedData = true;
@@ -75,5 +77,28 @@ export class AppComponent {
     this.fetchMyData();
 
   }
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (!input.files?.length) return;
+  
+    const file = input.files[0];
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const base64String = btoa(reader.result as string);
+      this.uploadImage(base64String);
+    };
+    reader.readAsBinaryString(file);
+  }
+  
+  uploadImage(base64String: string) {
+    // Implementation to send the base64 string to your API.
+  }
+
+  constructor(private sanitizer: DomSanitizer) {}
+
+sanitizeImage(base64String: string) {
+  this.imagePath = this.sanitizer.bypassSecurityTrustResourceUrl(`data:image/png;base64,${base64String}`);
+}
  
 }

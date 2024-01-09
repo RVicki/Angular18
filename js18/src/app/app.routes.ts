@@ -6,6 +6,9 @@ import { ContactComponent } from './contact/contact.component';
 //import auth guard and login component
 import { LoginComponent } from './login/login.component';
 import { authGuard } from './auth.guard';
+import { DetailsComponent } from './details/details.component';
+import { registerLocaleData } from '@angular/common';
+import { RegisterComponent } from './register/register.component';
 
 //Also create a login route and secure with [authGuard]!
 
@@ -31,5 +34,14 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'details',
+    component: DetailsComponent,
+  },
+  
+  {
+    path: 'register',
+    component: RegisterComponent,
   },
 ];
